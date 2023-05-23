@@ -1,0 +1,7 @@
+.navbar {
+    background-image: url('../../assets/more/navbar.jpg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

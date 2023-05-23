@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Component Css Style Some Coutome Code */
+
+/* Banner Page Css */
+
+.banner {
+  background-image: url('./assets/more/banner.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}

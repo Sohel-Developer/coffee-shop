@@ -5,12 +5,24 @@
 
 /* Component Css Style Some Coutome Code */
 
-/* Banner Page Css */
+/* Banner Section Css */
 
 .banner {
   background-image: url('./assets/more/banner.png');
+}
+
+/* Common Css */
+.banner,
+.features {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+}
+
+/* Features Section */
+
+.features {
+  background-image: url('./assets/more/1.png');
 
 }

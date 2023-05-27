@@ -5,9 +5,11 @@ import Footer from "../Shared/Footer/Footer";
 
 const Main = () => {
     return (
-        <div>
+        <div className=" flex flex-col">
             <Navbar />
-            <Outlet />
+            <div className=' flex-grow'>
+                <Outlet />
+            </div>
             <Footer />
         </div>
     );

@@ -1,6 +1,7 @@
 import { FaCoffee, FaEye, FaPen, FaTrash } from "react-icons/fa";
 
 import coffe1 from '../../../assets/coffee/1.png'
+import { Link } from "react-router-dom";
 // import coffe2 from '../../../assets/coffee/2.png'
 // import coffe3 from '../../../assets/coffee/3.png'
 // import coffe4 from '../../../assets/coffee/4.png'
@@ -18,8 +19,8 @@ const PopularProduct = () => {
                     <p>--- Follow Us Now ---</p>
                     <h2 className="font-rancho  text-6xl">Follow on Instagram</h2>
                     <div className="flex justify-center">
-                        <button className="  font-rancho rounded-md border-2 border-black flex items-center gap-2 bg-[#E3B577] py-2 px-5 ">Add Coffee
-                            <FaCoffee /> </button>
+                        <Link to='/addCoffee' className="  font-rancho rounded-md border-2 border-black flex items-center gap-2 bg-[#E3B577] py-2 px-5 ">Add Coffee
+                            <FaCoffee /> </Link>
                     </div>
                 </div>
 

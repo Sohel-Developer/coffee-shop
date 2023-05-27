@@ -15,7 +15,8 @@
 .banner,
 .features,
 .footer-bg,
-.footerBottom {
+.footerBottom,
+.addCoffeSection {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,4 +37,9 @@
 
 .footerBottom {
   background-image: url('./assets/more/footerBg.jpg');
+}
+
+/* Add Coffee Page */
+.addCoffeSection {
+  background-image: url('./assets/more/addCoofeeBg.png');
 }

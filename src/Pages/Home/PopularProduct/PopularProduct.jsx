@@ -45,7 +45,7 @@ const PopularProduct = () => {
                         {/* Action Button */}
                         <div className="space-y-5">
                             <div className="  bg-[#D2B48C] p-2 rounded-md">
-                                <FaEye className="text-white w-5 h-5 " />
+                                <Link to='/details'><FaEye className="text-white w-5 h-5 " /></Link>
                             </div>
                             <div className="bg-[#3C393B] p-2 rounded-md">
                                 <FaPen className="text-white w-5 h-5 " />

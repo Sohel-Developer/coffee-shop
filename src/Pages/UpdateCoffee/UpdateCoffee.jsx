@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
 const UpdateCoffee = () => {
+
+    const data = useLoaderData()
+
+    const { name, chef, supplier, taste, category, details, img } = data;
+
+    console.log(data);
     return (
         <section className="addCoffeSection ">
             {/* Dynamic Title */}
@@ -31,13 +37,13 @@ const UpdateCoffee = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" placeholder="Enter Coffee Name" className="input input-bordered" />
+                                    <input defaultValue={name} type="text" placeholder="Enter Coffee Name" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Chef</span>
                                     </label>
-                                    <input type="text" placeholder="Enter Chef Name" className="input input-bordered" />
+                                    <input defaultValue={chef} type="text" placeholder="Enter Chef Name" className="input input-bordered" />
 
                                 </div>
                             </div>
@@ -46,13 +52,13 @@ const UpdateCoffee = () => {
                                     <label className="label">
                                         <span className="label-text">Supplier</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee supplier" className="input input-bordered" />
+                                    <input type="text" defaultValue={supplier} placeholder="Enter coffee supplier" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Taste</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee taste" className="input input-bordered" />
+                                    <input defaultValue={taste} type="text" placeholder="Enter coffee taste" className="input input-bordered" />
 
                                 </div>
                             </div>
@@ -61,13 +67,13 @@ const UpdateCoffee = () => {
                                     <label className="label">
                                         <span className="label-text">Category</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee category" className="input input-bordered" />
+                                    <input defaultValue={category} type="text" placeholder="Enter coffee category" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Details</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee details" className="input input-bordered" />
+                                    <input defaultValue={details} type="text" placeholder="Enter coffee details" className="input input-bordered" />
 
                                 </div>
                             </div>
@@ -75,7 +81,7 @@ const UpdateCoffee = () => {
                                 <label className="label">
                                     <span className="label-text">Photo</span>
                                 </label>
-                                <input type="text" placeholder="Enter photo URL" className="input input-bordered" />
+                                <input defaultValue={img} type="text" placeholder="Enter photo URL" className="input input-bordered" />
 
                             </div>
                             <div className="form-control mt-6">

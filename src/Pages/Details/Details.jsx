@@ -10,7 +10,7 @@ const Details = () => {
     const data = useLoaderData()
 
     const { name, chef, supplier, taste, category, details, img } = data;
-    console.log(data);
+
     return (
         <section className="addCoffeSection mb-10 ">
             {/* Dynamic Title */}

@@ -2,8 +2,13 @@ import { FaEye, FaPen, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee, handelDelete }) => {
     const { name, img, chef, _id } = coffee;
+
+
+
+
+
     return (
         <div className="bg-[#F5F4F1] p-10 flex items-center justify-between font-raleway rounded-md">
             {/* Images */}
@@ -22,11 +27,12 @@ const CoffeeCard = ({ coffee }) => {
                     <Link to={`/coffee/${_id}`}><FaEye className="text-white w-5 h-5 " /></Link>
                 </div>
                 <div className="bg-[#3C393B] p-2 rounded-md">
-                    <Link to='/update'> <FaPen className="text-white w-5 h-5 " /></Link>
+                    <Link to={`/update/${_id}`}> <FaPen className="text-white w-5 h-5 " /></Link>
 
                 </div>
                 <div className="bg-[#EA4744] p-2 rounded-md">
-                    <FaTrash className="text-white w-5 h-5 " />
+
+                    <button onClick={() => handelDelete(_id)}><FaTrash className="text-white w-5 h-5 " /></button>
 
                 </div>
             </div>

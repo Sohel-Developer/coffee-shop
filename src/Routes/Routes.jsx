@@ -5,6 +5,7 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import AddCoffee from "../Pages/AddCoffee/AddCoffee";
 import Details from "../Pages/Details/Details";
+import UpdateCoffee from "../Pages/UpdateCoffee/UpdateCoffee";
 
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: '/details',
                 element: <Details />
+            },
+            {
+                path: '/update',
+                element: <UpdateCoffee />
             }
         ]
     },

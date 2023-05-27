@@ -48,7 +48,7 @@ const PopularProduct = () => {
                                 <Link to='/details'><FaEye className="text-white w-5 h-5 " /></Link>
                             </div>
                             <div className="bg-[#3C393B] p-2 rounded-md">
-                                <FaPen className="text-white w-5 h-5 " />
+                                <Link to='/update'> <FaPen className="text-white w-5 h-5 " /></Link>
 
                             </div>
                             <div className="bg-[#EA4744] p-2 rounded-md">

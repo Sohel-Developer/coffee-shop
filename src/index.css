@@ -13,7 +13,9 @@
 
 /* Common Css */
 .banner,
-.features {
+.features,
+.footer-bg,
+.footerBottom {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,4 +27,13 @@
 .features {
   background-image: url('./assets/more/1.png');
 
+}
+
+/* Footer css */
+.footer-bg {
+  background-image: url('./assets/more/footer.jpg');
+}
+
+.footerBottom {
+  background-image: url('./assets/more/footerBg.jpg');
 }

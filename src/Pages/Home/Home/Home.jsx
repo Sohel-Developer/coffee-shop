@@ -6,12 +6,12 @@ import PopularProduct from "../PopularProduct/PopularProduct";
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Banner />
             <Features />
             <PopularProduct />
             <Gellary />
-        </div>
+        </>
     );
 };
 

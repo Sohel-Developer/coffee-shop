@@ -16,7 +16,6 @@ const PopularProduct = () => {
         fetch('http://localhost:5000/coffee')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setCoffees(data)
             })
     }, [])
@@ -24,8 +23,6 @@ const PopularProduct = () => {
 
 
     const handelDelete = (id) => {
-
-
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -41,8 +38,6 @@ const PopularProduct = () => {
                     'Your Coffee Item has been deleted.',
                     'success'
                 )
-
-
                 const url = `http://localhost:5000/coffee/${id}`
                 fetch(url, {
                     method: "DELETE"
@@ -50,29 +45,12 @@ const PopularProduct = () => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount) {
-
                             const remaning = coffees.filter(coffee => coffee._id !== id)
                             setCoffees(remaning)
                         }
-
                     })
-
-
-
-
-
-
-
-
-
             }
         })
-
-
-
-
-
-
     }
 
 

@@ -1,9 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const UpdateCoffee = () => {
+    const navigate = useNavigate()
 
     const data = useLoaderData()
 
@@ -37,7 +39,11 @@ const UpdateCoffee = () => {
 
         )
             .then((res) => {
-                console.log(res.data);
+                const data = res.data;
+                if (data.modifiedCount > 0) {
+                    navigate('/')
+                    toast.success('Updated Successfully')
+                }
             })
             .catch((error) => {
                 console.log(error);
@@ -126,7 +132,7 @@ const UpdateCoffee = () => {
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
-                                        <span className="label-text">Price</span>
+                                        <span className="label-text">Photo URL</span>
                                     </label>
                                     <input defaultValue={img} name="img" type="text" placeholder="Enter photo URL" className="input input-bordered" />
 

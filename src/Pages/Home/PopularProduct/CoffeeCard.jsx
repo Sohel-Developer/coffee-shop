@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const CoffeeCard = ({ coffee, handelDelete }) => {
-    const { name, img, chef, _id } = coffee;
+    const { name, img, chef, _id, price } = coffee;
 
 
 
@@ -19,7 +19,7 @@ const CoffeeCard = ({ coffee, handelDelete }) => {
             <div className="space-y-5">
                 <p> <span className="font-bold">Name:</span> {name} </p>
                 <p> <span className="font-bold">Chef:</span> {chef}</p>
-                <p> <span className="font-bold">Price:</span> 890 Taka</p>
+                <p> <span className="font-bold">Price: $ </span> {price}</p>
             </div>
             {/* Action Button */}
             <div className="space-y-5">

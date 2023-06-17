@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Espresso Italiano",
+        "chef": "Giuseppe Rossi",
+        "supplier": "Caffe Italia",
+        "taste": "Bold and Intense",
+        "category": "Espresso",
+        "details": "A classic Italian espresso with a rich flavor and a velvety crema.",
+        "img": "https://i.ibb.co/LpTMmwm/1.png",
+        "price": 3.99
+    },
+    {
+        "name": "Mocha Madness",
+        "chef": "Maria Sanchez",
+        "supplier": "Cocoa Coffee Co.",
+        "taste": "Indulgent and Chocolatey",
+        "category": "Specialty Coffee",
+        "details": "A delightful blend of espresso, steamed milk, and chocolate, topped with whipped cream and cocoa powder.",
+        "img": "https://i.ibb.co/BGRTW4B/2.png",
+        "price": 4.99
+    },
+    {
+        "name": "Single-Origin Ethiopian",
+        "chef": "Juan Rodriguez",
+        "supplier": "Bean & Co.",
+        "taste": "Fruity and Floral",
+        "category": "Single-Origin",
+        "details": "A medium-roast coffee with vibrant notes of blueberry and jasmine, sourced directly from Ethiopia.",
+        "img": "https://i.ibb.co/8xMGyMP/4.png",
+        "price": 5.99
+    },
+    {
+        "name": "Decaf Delight",
+        "chef": "Sophie Martin",
+        "supplier": "Nature's Brew",
+        "taste": "Smooth and Balanced",
+        "category": "Decaf",
+        "details": "A decaffeinated blend with a mellow flavor and a hint of nuttiness, perfect for those seeking a caffeine-free option.",
+        "img": "https://i.ibb.co/y0H4gHf/3.png",
+        "price": 3.49
+    },
+    {
+        "name": "Cold Brew Infusion",
+        "chef": "Alexandre Dubois",
+        "supplier": "Café Parisien",
+        "taste": "Refreshing and Light",
+        "category": "Cold Brew",
+        "details": "A refreshing cold brew coffee infused with natural flavors of orange and mint, served over ice.",
+        "img": "https://i.ibb.co/y0H4gHf/3.png",
+        "price": 4.49
+    },
+    {
+        "name": "Caramel Macchiato",
+        "chef": "Isabella Gomez",
+        "supplier": "Sweet Bean Café",
+        "taste": "Sweet and Creamy",
+        "category": "Specialty Coffee",
+        "details": "A luscious combination of espresso, steamed milk, and caramel syrup, finished with a drizzle of caramel sauce.",
+        "img": "https://i.ibb.co/GTXsGc0/5.png",
+        "price": 5.49
+    }
+]

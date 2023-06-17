@@ -9,7 +9,7 @@ const Details = () => {
 
     const data = useLoaderData()
 
-    const { name, chef, supplier, taste, category, details, img } = data;
+    const { name, chef, supplier, taste, category, details, img, price } = data;
 
     return (
         <section className="addCoffeSection mb-10 ">
@@ -36,6 +36,7 @@ const Details = () => {
                         <p> <span className="font-bold">Taste:</span> {taste}</p>
                         <p> <span className="font-bold">Category:</span> {category}</p>
                         <p> <span className="font-bold">Details:</span> {details}</p>
+                        <p> <span className="font-bold">Price: $ </span> {price}</p>
                     </div>
 
 

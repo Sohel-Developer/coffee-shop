@@ -1,9 +1,64 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
 
 const AddCoffee = () => {
+
+    const navigate = useNavigate()
+
+    const addCoffe = (e) => {
+        e.preventDefault()
+
+        const from = e.target;
+        const name = from.name.value;
+        const chef = from.chef.value;
+        const supplier = from.supplier.value;
+        const taste = from.taste.value;
+        const category = from.category.value;
+        const details = from.details.value;
+        const img = from.img.value;
+        const price = from.price.value;
+
+        const saveData = {
+            name,
+            chef,
+            supplier,
+            taste,
+            category,
+            details,
+            img,
+            price
+
+        }
+
+        axios.post(`http://localhost:5000/coffee`, saveData,
+
+        )
+            .then((res) => {
+                const data = res.data;
+                console.log(data);
+                if (data.insertedId) {
+                    navigate('/')
+                    toast.success('Add Successfully')
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+
+
+
+
+
+
+
+
+
     return (
         <section className="addCoffeSection ">
             {/* Dynamic Title */}
@@ -26,19 +81,19 @@ const AddCoffee = () => {
 
 
                     <div className="card flex-shrink-0 w-full  shadow-2xl ">
-                        <div className="card-body">
+                        <form onSubmit={addCoffe} className="card-body">
                             <div className="flex gap-10 ">
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" placeholder="Enter Coffee Name" className="input input-bordered" />
+                                    <input name="name" type="text" placeholder="Enter Coffee Name" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Chef</span>
                                     </label>
-                                    <input type="text" placeholder="Enter Chef Name" className="input input-bordered" />
+                                    <input name="chef" type="text" placeholder="Enter Chef Name" className="input input-bordered" />
 
                                 </div>
                             </div>
@@ -47,13 +102,13 @@ const AddCoffee = () => {
                                     <label className="label">
                                         <span className="label-text">Supplier</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee supplier" className="input input-bordered" />
+                                    <input type="text" name="supplier" placeholder="Enter coffee supplier" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Taste</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee taste" className="input input-bordered" />
+                                    <input name="taste" type="text" placeholder="Enter coffee taste" className="input input-bordered" />
 
                                 </div>
                             </div>
@@ -62,27 +117,36 @@ const AddCoffee = () => {
                                     <label className="label">
                                         <span className="label-text">Category</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee category" className="input input-bordered" />
+                                    <input name="category" type="text" placeholder="Enter coffee category" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Details</span>
                                     </label>
-                                    <input type="text" placeholder="Enter coffee details" className="input input-bordered" />
+                                    <input name="details" type="text" placeholder="Enter coffee details" className="input input-bordered" />
 
                                 </div>
                             </div>
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Photo</span>
-                                </label>
-                                <input type="text" placeholder="Enter photo URL" className="input input-bordered" />
+                            <div className="flex gap-10">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Price</span>
+                                    </label>
+                                    <input name="price" type="number" placeholder=" Price " className="input input-bordered" />
 
+                                </div>
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Photo URL</span>
+                                    </label>
+                                    <input name="img" type="text" placeholder="Enter photo URL" className="input input-bordered" />
+
+                                </div>
                             </div>
                             <div className="form-control mt-6">
                                 <input type="submit" className="bg-[#D2B48C] font-rancho text-2xl py-2 rounded-md cursor-pointer " value='Add Coffe' />
                             </div>
-                        </div>
+                        </form>
                     </div>
 
                 </div>

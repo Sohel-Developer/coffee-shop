@@ -1,14 +1,53 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 const UpdateCoffee = () => {
 
     const data = useLoaderData()
 
-    const { name, chef, supplier, taste, category, details, img } = data;
+    const { name, chef, supplier, taste, category, details, img, price } = data;
 
-    console.log(data);
+
+    const updateCoffe = (e) => {
+        e.preventDefault()
+
+        const from = e.target;
+        const name = from.name.value;
+        const chef = from.chef.value;
+        const supplier = from.supplier.value;
+        const taste = from.taste.value;
+        const category = from.category.value;
+        const details = from.details.value;
+        const img = from.img.value;
+
+        const saveData = {
+            name,
+            chef,
+            supplier,
+            taste,
+            category,
+            details,
+            img
+
+        }
+
+        axios.put(`http://localhost:5000/coffee/${data._id}`, saveData,
+
+        )
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+
+
+
+
     return (
         <section className="addCoffeSection ">
             {/* Dynamic Title */}
@@ -31,19 +70,19 @@ const UpdateCoffee = () => {
 
 
                     <div className="card flex-shrink-0 w-full  shadow-2xl ">
-                        <div className="card-body">
+                        <form onSubmit={updateCoffe} className="card-body">
                             <div className="flex gap-10 ">
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input defaultValue={name} type="text" placeholder="Enter Coffee Name" className="input input-bordered" />
+                                    <input defaultValue={name} name="name" type="text" placeholder="Enter Coffee Name" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Chef</span>
                                     </label>
-                                    <input defaultValue={chef} type="text" placeholder="Enter Chef Name" className="input input-bordered" />
+                                    <input defaultValue={chef} name="chef" type="text" placeholder="Enter Chef Name" className="input input-bordered" />
 
                                 </div>
                             </div>
@@ -52,13 +91,13 @@ const UpdateCoffee = () => {
                                     <label className="label">
                                         <span className="label-text">Supplier</span>
                                     </label>
-                                    <input type="text" defaultValue={supplier} placeholder="Enter coffee supplier" className="input input-bordered" />
+                                    <input type="text" defaultValue={supplier} name="supplier" placeholder="Enter coffee supplier" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Taste</span>
                                     </label>
-                                    <input defaultValue={taste} type="text" placeholder="Enter coffee taste" className="input input-bordered" />
+                                    <input defaultValue={taste} name="taste" type="text" placeholder="Enter coffee taste" className="input input-bordered" />
 
                                 </div>
                             </div>
@@ -67,27 +106,36 @@ const UpdateCoffee = () => {
                                     <label className="label">
                                         <span className="label-text">Category</span>
                                     </label>
-                                    <input defaultValue={category} type="text" placeholder="Enter coffee category" className="input input-bordered" />
+                                    <input defaultValue={category} name="category" type="text" placeholder="Enter coffee category" className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Details</span>
                                     </label>
-                                    <input defaultValue={details} type="text" placeholder="Enter coffee details" className="input input-bordered" />
+                                    <input defaultValue={details} name="details" type="text" placeholder="Enter coffee details" className="input input-bordered" />
 
                                 </div>
                             </div>
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text">Photo</span>
-                                </label>
-                                <input defaultValue={img} type="text" placeholder="Enter photo URL" className="input input-bordered" />
+                            <div className="flex gap-10">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Photo</span>
+                                    </label>
+                                    <input defaultValue={price} name="price" type="number" placeholder="Price" className="input input-bordered" />
 
+                                </div>
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Price</span>
+                                    </label>
+                                    <input defaultValue={img} name="img" type="text" placeholder="Enter photo URL" className="input input-bordered" />
+
+                                </div>
                             </div>
                             <div className="form-control mt-6">
                                 <input type="submit" className="bg-[#D2B48C] font-rancho text-2xl py-2 rounded-md cursor-pointer " value='Update Coffee Details' />
                             </div>
-                        </div>
+                        </form>
                     </div>
 
                 </div>

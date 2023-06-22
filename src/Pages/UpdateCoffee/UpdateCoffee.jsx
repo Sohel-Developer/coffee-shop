@@ -35,7 +35,7 @@ const UpdateCoffee = () => {
 
         }
 
-        axios.put(`http://localhost:5000/coffee/${data._id}`, saveData,
+        axios.put(`https://coffee-shop-server-ten.vercel.app/coffee/${data._id}`, saveData,
 
         )
             .then((res) => {

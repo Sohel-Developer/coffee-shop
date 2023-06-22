@@ -13,7 +13,7 @@ const PopularProduct = () => {
     const [coffees, setCoffees] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/coffee')
+        fetch('https://coffee-shop-server-ten.vercel.app/coffee')
             .then(res => res.json())
             .then(data => {
                 setCoffees(data)
@@ -38,7 +38,7 @@ const PopularProduct = () => {
                     'Your Coffee Item has been deleted.',
                     'success'
                 )
-                const url = `http://localhost:5000/coffee/${id}`
+                const url = `https://coffee-shop-server-ten.vercel.app/coffee/${id}`
                 fetch(url, {
                     method: "DELETE"
                 })

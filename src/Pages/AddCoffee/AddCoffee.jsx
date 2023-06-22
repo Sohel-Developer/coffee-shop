@@ -34,7 +34,7 @@ const AddCoffee = () => {
 
         }
 
-        axios.post(`http://localhost:5000/coffee`, saveData,
+        axios.post(`https://coffee-shop-server-ten.vercel.app/coffee`, saveData,
 
         )
             .then((res) => {

@@ -13,7 +13,7 @@ const PopularProduct = () => {
     const [coffees, setCoffees] = useState([])
 
     useEffect(() => {
-        fetch('https://coffee-shop-phi-self.vercel.app/coffee')
+        fetch('https://coffee-shop-server-one.vercel.app/coffee')
             .then(res => res.json())
             .then(data => {
                 setCoffees(data)

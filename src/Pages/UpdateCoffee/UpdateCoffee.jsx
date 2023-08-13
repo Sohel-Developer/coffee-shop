@@ -35,7 +35,7 @@ const UpdateCoffee = () => {
 
         }
 
-        axios.put(`https://coffee-shop-phi-self.vercel.app/coffee/${data._id}`, saveData,
+        axios.put(`https://coffee-shop-server-one.vercel.app/coffee/${data._id}`, saveData,
 
         )
             .then((res) => {
@@ -56,7 +56,7 @@ const UpdateCoffee = () => {
 
     return (
         <section className="addCoffeSection ">
-            {/* Dynamic Title */}
+            {/* Dynamic Title  */}
             <Helmet>
                 <title> Espresso Emporium | UpdateCoffee</title>
             </Helmet>

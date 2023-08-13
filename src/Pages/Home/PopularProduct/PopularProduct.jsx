@@ -38,7 +38,7 @@ const PopularProduct = () => {
                     'Your Coffee Item has been deleted.',
                     'success'
                 )
-                const url = `https://coffee-shop-phi-self.vercel.app/coffee/${id}`
+                const url = `https://coffee-shop-server-one.vercel.app/coffee/${id}`
                 fetch(url, {
                     method: "DELETE"
                 })

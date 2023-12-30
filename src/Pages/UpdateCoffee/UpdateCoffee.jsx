@@ -23,6 +23,7 @@ const UpdateCoffee = () => {
         const category = from.category.value;
         const details = from.details.value;
         const img = from.img.value;
+        const price = from.price.value;
 
         const saveData = {
             name,
@@ -31,13 +32,12 @@ const UpdateCoffee = () => {
             taste,
             category,
             details,
-            img
+            img,
+            price
 
         }
 
-        axios.put(`hhttps://coffee-shop-server-one.vercel.app/coffee/${data._id}`, saveData,
-
-        )
+        axios.put(`https://coffee-shop-server.up.railway.app/coffee/${data._id}`, saveData)
             .then((res) => {
                 const data = res.data;
                 if (data.modifiedCount > 0) {
@@ -125,7 +125,7 @@ const UpdateCoffee = () => {
                             <div className="flex gap-10">
                                 <div className="form-control w-full">
                                     <label className="label">
-                                        <span className="label-text">Photo</span>
+                                        <span className="label-text">Price</span>
                                     </label>
                                     <input defaultValue={price} name="price" type="number" placeholder="Price" className="input input-bordered" />
 

@@ -26,12 +26,12 @@ export const router = createBrowserRouter([
             {
                 path: '/coffee/:id',
                 element: <Details />,
-                loader: ({ params }) => fetch(`https://coffee-shop-server-one.vercel.app/coffee/${params.id}`)
+                loader: ({ params }) => fetch(`https://coffee-shop-server.up.railway.app/coffee/${params.id}`)
             },
             {
                 path: '/update/:id',
                 element: <UpdateCoffee />,
-                loader: ({ params }) => fetch(`https://coffee-shop-server-one.vercel.app/coffee/${params.id}`)
+                loader: ({ params }) => fetch(`https://coffee-shop-server.up.railway.app/coffee/${params.id}`)
             },
             {
                 path: '*',

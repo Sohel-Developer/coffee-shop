@@ -37,7 +37,7 @@ const UpdateCoffee = () => {
 
         }
 
-        axios.put(`https://coffee-shop-server.up.railway.app/coffee/${data._id}`, saveData)
+        axios.put(`https://coffee-shop-server-ynia.onrender.com/coffee/${data._id}`, saveData)
             .then((res) => {
                 const data = res.data;
                 if (data.modifiedCount > 0) {

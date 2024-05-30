@@ -34,7 +34,7 @@ const AddCoffee = () => {
 
         }
 
-        axios.post(`https://coffee-shop-server.up.railway.app/coffee`, saveData,
+        axios.post(`https://coffee-shop-server-ynia.onrender.com/coffee`, saveData,
 
         )
             .then((res) => {

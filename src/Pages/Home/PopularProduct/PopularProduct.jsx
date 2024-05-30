@@ -13,7 +13,7 @@ const PopularProduct = () => {
     const [coffees, setCoffees] = useState([])
 
     useEffect(() => {
-        fetch('https://coffee-shop-server.up.railway.app/coffee')
+        fetch('https://coffee-shop-server-ynia.onrender.com/coffee')
             .then(res => res.json())
             .then(data => {
                 setCoffees(data)
